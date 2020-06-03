@@ -8,6 +8,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      env: ${{secrets.SLACK_API_KEY}}
 
       - name: Checkout
         uses: actions/checkout@v2
