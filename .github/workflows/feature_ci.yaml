@@ -12,7 +12,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      env: ${{secrets.SLACK_API_KEY}}
+        env: ${{secrets.SLACK_API_KEY}}
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -49,4 +49,5 @@ jobs:
           poetry run black . --check
 
       - name: Test Code
+        env: ${{secrets.SLACK_API_KEY}}
         run: poetry run pytest
