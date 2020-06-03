@@ -42,12 +42,12 @@ jobs:
       - name: Install Project Dependencies if needed.
         if: steps.cache.outputs.cache-hit != 'true'
         run: poetry install
-        
-
+      
       - name: Code Quality
         run: |
           poetry run black . --check
 
       - name: Test Code
-        env: ${{secrets.SLACK_API_KEY}}
+        env: 
+          SLACK_API_KEY: ${{secrets.SLACK_API_KEY}}
         run: poetry run pytest

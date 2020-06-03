@@ -42,5 +42,6 @@ jobs:
           poetry run black . --check
 
       - name: Test Code
-        env: ${{secrets.SLACK_API_KEY}}
+        env: 
+          SLACK_API_KEY: ${{secrets.SLACK_API_KEY}}
         run: poetry run pytest
