@@ -48,4 +48,5 @@ jobs:
       - name: Test Code
         env: 
           SLACK_API_KEY: ${{secrets.SLACK_API_KEY}}
+          SLACK_MOCK_CHANNEL: ${{secrets.SLACK_MOCK_CHANNEL}}
         run: poetry run pytest
