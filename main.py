@@ -12,7 +12,7 @@ def check_response(response: SlackResponse) -> None:
 def get_conversations(client: WebClient, channel: Text) -> dict:
     response = client.conversations_history(channel=channel)
     check_response(response)
-    return response['messages']
+    return response["messages"]
 
 
 def get_all_channels(client: WebClient) -> List[Text]:
